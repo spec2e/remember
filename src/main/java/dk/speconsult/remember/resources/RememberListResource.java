@@ -24,7 +24,7 @@ public class RememberListResource {
         Query<RememberList> rememberLists = mongo.getDatastore().find(RememberList.class);
         Iterable<RememberList> fetch = rememberLists.fetch();
         for (RememberList rememberList : fetch) {
-            System.out.println("rememberList = " + rememberList);
+            queryList.add(rememberList);
         }
 
         return queryList;
@@ -37,4 +37,7 @@ public class RememberListResource {
         return rememberList;
 
     }
+
+
+
 }
