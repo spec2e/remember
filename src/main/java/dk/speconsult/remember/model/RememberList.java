@@ -11,7 +11,7 @@ import java.util.List;
 public class RememberList {
 
     @Id
-    private ObjectId id;
+    private String id;
 
     private String name;
     private String description;
@@ -19,12 +19,11 @@ public class RememberList {
 
     private List<Remember> rememberings;
 
-
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 

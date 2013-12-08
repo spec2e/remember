@@ -2,12 +2,15 @@ package dk.speconsult.remember.resources;
 
 import dk.speconsult.remember.model.RememberList;
 import dk.speconsult.remember.service.MorphiaService;
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.Key;
 import org.mongodb.morphia.query.Query;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,12 +33,24 @@ public class RememberListResource {
         return queryList;
     }
 
+    @GET
+    @Path("/{id}")
+    public RememberList get(@PathParam(value = "id") String id) throws Exception {
+        return doGetById(id);
+    }
+
+    private RememberList doGetById(String id) throws Exception {
+        ObjectId mongoId = new ObjectId(id);
+        Query<RememberList> query = mongo.getDatastore().find(RememberList.class).field("id").equal(mongoId);
+        RememberList toReturn = query.get();
+        return toReturn;
+    }
+
     @POST
     public RememberList createRememberList(RememberList rememberList) throws Exception {
 
-        mongo.getDatastore().save(rememberList);
-        return rememberList;
-
+        Key<RememberList> key = mongo.getDatastore().save(rememberList);
+        return doGetById((String) key.getId());
     }
 
 
