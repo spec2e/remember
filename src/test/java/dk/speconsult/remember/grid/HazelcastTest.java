@@ -36,7 +36,7 @@ public class HazelcastTest {
         return rememberListMap;
     }
 
-    //@Test
+    @Test
     public void testHazelcastIntsance() {
         IMap map = getMap();
         Assert.assertNotNull(map);
@@ -48,7 +48,7 @@ public class HazelcastTest {
         RememberList rememberList;
         IMap map = getMap();
         map.clear();
-        for(int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
 
             rememberList = new RememberList();
             rememberList.setDescription("test1" + 1);
@@ -58,12 +58,6 @@ public class HazelcastTest {
             rememberList.setStatus(Status.ACTIVE);
 
             map.putIfAbsent(id, rememberList);
-
-            /*
-            if(i % 1000 == 0) {
-                System.out.println("count = " + i);
-            }
-            */
         }
 
         Assert.assertEquals(1000, map.size());
@@ -85,7 +79,6 @@ public class HazelcastTest {
         Assert.assertEquals(1000, map.size());
 
 
-
     }
 
     @Test
@@ -100,7 +93,6 @@ public class HazelcastTest {
         Assert.assertEquals(1000, map.size());
 
 
-
     }
 
     @Test
@@ -113,12 +105,6 @@ public class HazelcastTest {
         IMap map = client.getMap(HazelcastService.REMEMBERLIST_MAP);
 
         Assert.assertEquals(1000, map.size());
-
-        /*
-        for (Object o : map.keySet()) {
-            System.out.println("o = " + o);
-        }
-        */
 
     }
 
