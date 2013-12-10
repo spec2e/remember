@@ -4,11 +4,12 @@ import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
+import java.io.Serializable;
 import java.util.List;
 
 
 @Entity("rememberList")
-public class RememberList {
+public class RememberList implements Serializable {
 
     @Id
     private String id;
