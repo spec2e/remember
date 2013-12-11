@@ -22,7 +22,7 @@ import org.junit.Test;
 public class HazelcastTest {
 
 
-    @BeforeClass
+    //_@BeforeClass
     public static void startHazecastCluster() {
         Config cfg = new Config();
         Hazelcast.newHazelcastInstance(cfg);
@@ -47,6 +47,8 @@ public class HazelcastTest {
 
         RememberList rememberList;
         IMap map = getMap();
+
+
         map.clear();
         for (int i = 0; i < 1000; i++) {
 
@@ -85,12 +87,13 @@ public class HazelcastTest {
     public void testSecondNodeInCluster() {
 
         ClientConfig clientConfig = new ClientConfig();
-        clientConfig.addAddress("127.0.0.1:5702");
+        clientConfig.addAddress("10.4.40.160:5702");
         HazelcastInstance client = HazelcastClient.newHazelcastClient(clientConfig);
 
         IMap map = client.getMap(HazelcastService.REMEMBERLIST_MAP);
 
         Assert.assertEquals(1000, map.size());
+        System.out.println("map.size() = " + map.size());
 
 
     }
@@ -99,12 +102,13 @@ public class HazelcastTest {
     public void testThirdNodeInCluster() {
 
         ClientConfig clientConfig = new ClientConfig();
-        clientConfig.addAddress("127.0.0.1:5703");
+        clientConfig.addAddress("10.4.40.160:5701");
         HazelcastInstance client = HazelcastClient.newHazelcastClient(clientConfig);
 
         IMap map = client.getMap(HazelcastService.REMEMBERLIST_MAP);
 
         Assert.assertEquals(1000, map.size());
+        System.out.println("map = " + map.size());
 
     }
 
