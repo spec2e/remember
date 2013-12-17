@@ -96,8 +96,8 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.2</version>
+            <scope>test</scope>
         </dependency>
-
 
         <dependency>
             <groupId>javax</groupId>
@@ -114,11 +114,16 @@
         </dependency>
 
         <dependency>
+            <groupId>ro.isdc.wro4j</groupId>
+            <artifactId>wro4j-core</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.mongodb</groupId>
