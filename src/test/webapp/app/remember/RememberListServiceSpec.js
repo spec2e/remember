@@ -1,5 +1,5 @@
 /*jslint browser : true, continue : true,
- devel : true, indent : 2, maxerr : 50,
+ devel : true, indent : 4, maxerr : 50,
  newcap : true, nomen : true, plusplus : true,
  regexp : true, sloppy : true, vars : false,
  white : false
@@ -14,8 +14,8 @@ describe('RememberListService tests', function () {
 
     describe('Test that RememberListService returns a list of RememberList resources', function () {
 
-        var scope;
-        var service;
+        var scop,
+            service;
 
         beforeEach(inject(function ($controller, $rootScope, RememberListService) {
             scope = $rootScope.$new();
@@ -27,9 +27,9 @@ describe('RememberListService tests', function () {
             });
         }));
 
-        it("should have a service named RememberListService"), function() {
+        it("should have a service named RememberListService", function () {
             expect(service).not.toBe(null);
-        };
+        });
 
         /*
         it('should get a list of ToDos from the service', function () {

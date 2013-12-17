@@ -1,5 +1,5 @@
 /*jslint browser : true, continue : true,
- devel : true, indent : 2, maxerr : 50,
+ devel : true, indent : 4, maxerr : 50,
  newcap : true, nomen : true, plusplus : true,
  regexp : true, sloppy : true, vars : false,
  white : false
@@ -19,7 +19,7 @@ function namespace(namespaceString) {
         currentPart = ''
         ;
 
-    angular.forEach(parts, function(value, key) {
+    angular.forEach(parts, function (value, key) {
         currentPart = value;
         parent[currentPart] = parent[currentPart] || {};
         parent = parent[currentPart];
