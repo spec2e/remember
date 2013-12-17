@@ -6,9 +6,9 @@
  */
 /*global namespace, log, window, angular, kata */
 
-namespace('kata.home');
+namespace('remember.home');
 
-kata.home.TodoListController = function ($scope, TodoService) {
+remember.home.TodoListController = function ($scope, TodoService) {
 
     $scope.todos = TodoService.query();
 

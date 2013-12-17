@@ -6,11 +6,11 @@
  */
 /*global namespace, log, window, angular, kata */
 
-namespace('kata');
+namespace('remember');
 
-var kataModule = angular.module('Kata', ['ngResource']);
+var rememberModule = angular.module('Remember', ['ngResource']);
 
-kataModule.factory('httpInterceptor', function ($q, $rootScope) {
+rememberModule.factory('httpInterceptor', function ($q, $rootScope) {
 
     return {
 
@@ -41,14 +41,14 @@ kataModule.factory('httpInterceptor', function ($q, $rootScope) {
     };
 });
 
-kataModule.config(['$httpProvider',
+rememberModule.config(['$httpProvider',
     function ($httpProvider) {
         $httpProvider.interceptors.push('httpInterceptor');
     }
 ]);
 
 
-kataModule.run(function($rootScope) {
+rememberModule.run(function($rootScope) {
 
     $rootScope.showOverlay = false;
 });

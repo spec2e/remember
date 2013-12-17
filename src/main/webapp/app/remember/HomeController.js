@@ -6,10 +6,10 @@
  */
 /*global namespace, log, window, angular, kata */
 
-namespace('kata.home');
+namespace('remember.home');
 
 
-kata.home.HomeController = function ($scope, TodoService) {
+remember.home.HomeController = function ($scope, RememberListService) {
     $scope.model = {
         selectedTodoSubject: undefined
     };

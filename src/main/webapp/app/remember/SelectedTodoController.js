@@ -6,10 +6,10 @@
  */
 /*global namespace, log, window, angular, kata */
 
-namespace('kata.home');
+namespace('remember.home');
 
 
-kata.home.SelectedTodoController = function ($scope) {
+remember.home.SelectedTodoController = function ($scope) {
 
     //This is just a pseudo controller, used to illustrate the inheritance problem.
 
