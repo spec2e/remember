@@ -36,13 +36,13 @@ public class HazelcastTest {
         return rememberListMap;
     }
 
-    @Test
+    //@Test
     public void testHazelcastIntsance() {
         IMap map = getMap();
         Assert.assertNotNull(map);
     }
 
-    @Test
+    //@Test
     public void testAddRememberList() {
 
         RememberList rememberList;
@@ -69,7 +69,7 @@ public class HazelcastTest {
     }
 
 
-    @Test
+    //@Test
     public void testFirstNodeInCluster() {
 
         ClientConfig clientConfig = new ClientConfig();
@@ -83,7 +83,7 @@ public class HazelcastTest {
 
     }
 
-    @Test
+    //@Test
     public void testSecondNodeInCluster() {
 
         ClientConfig clientConfig = new ClientConfig();
@@ -98,7 +98,7 @@ public class HazelcastTest {
 
     }
 
-    @Test
+    //@Test
     public void testThirdNodeInCluster() {
 
         ClientConfig clientConfig = new ClientConfig();

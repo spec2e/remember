@@ -12,7 +12,8 @@ module.exports = function(config) {
             'src/main/webapp/lib/ui-bootstrap-tpls-0.5.0.min.js',
             'src/main/webapp/app/remember/util.js',
             'src/main/webapp/app/remember/app.js',
-            'src/main/webapp/app/remember/app/HomeController.js',
+            'src/main/webapp/app/remember/RememberListService.js',
+            'src/main/webapp/app/remember/HomeController.js',
             'src/test/webapp/app/**/*.js'
         ],
         exclude: ['src/test/webapp/karma.conf*.js'],

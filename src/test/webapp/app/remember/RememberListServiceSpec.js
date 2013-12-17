@@ -15,19 +15,20 @@ describe('RememberListService tests', function () {
     describe('Test that RememberListService returns a list of RememberList resources', function () {
 
         var scope;
-        var rememberListService;
+        var service;
 
         beforeEach(inject(function ($controller, $rootScope, RememberListService) {
             scope = $rootScope.$new();
-            rememberListService = RememberListService;
-            $controller('remember.home.HomeController', {
+            service = RememberListService;
+
+            $controller('remember.HomeController', {
                 $scope: scope,
-                RememberListService: rememberListService
+                RememberListService: service
             });
         }));
 
         it("should have a service named RememberListService"), function() {
-            expect(rememberListService).not.toBe(null);
+            expect(service).not.toBe(null);
         };
 
         /*
